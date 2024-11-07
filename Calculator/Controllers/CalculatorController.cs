@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Calculator.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Calculator.Controllers
 {
@@ -6,7 +7,7 @@ namespace Calculator.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return View(new CalculatorModel());
         }
     }
 }
