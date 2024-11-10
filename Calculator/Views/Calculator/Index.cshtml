@@ -1,4 +1,4 @@
-@model Calculator.Models.CalculatorModel
+﻿@model Calculator.Models.CalculatorModel
 @{
     ViewData["Title"] = "Calculator App";
 }
@@ -6,26 +6,30 @@
 <div class="row">
     @using (Html.BeginForm("Index", "Calculator", FormMethod.Post))
     {
-                <textarea type="text" id="inputtext" placeholder="0"></textarea>
-                <button>C</button>
-                <button>DEL</button>
-                <button>AC</button>
-                <button>+</button>
-                <button>7</button>
-                <button>8</button>
-                <button>9</button>
-                <button>-</button>
-                <button>4</button>
-                <button>5</button>
-                <button>6</button>
-                <button>*</button>
-                <button>1</button>
-                <button>2</button>
-                <button>3</button>
-                <button>/</button>
-                <button>00</button>
-                <button>0</button>
-                <button>.</button>
-                <button>=</button>
+        <div class="grid-container">
+            <div class="calculator-grid">
+                <textarea type="text" id="inputtext" placeholder="0" value="@Model.Placeholder">@Model.Placeholder</textarea>
+                <button type="submit" id="clear" name="btnName" value="clear">C</button>
+                <button type="submit" id="delete" name="btnName" value="delete">DEL</button>
+                <button type="submit" id="allClear" name="btnName" value="allClear">AC</button>
+                <button type="submit" id="add" name="btnName" value="add">+</button>
+                <button type="submit" id="seven" name="btnName" value="7">7</button>
+                <button type="submit" id="eight" name="btnName" value="8">8</button>
+                <button type="submit" id="nine" name="btnName" value="9">9</button>
+                <button type="submit" id="sub" name="btnName" value="sub">-</button>
+                <button type="submit" id="four" name="btnName" value="4">4</button>
+                <button type="submit" id="five" name="btnName" value="5">5</button>
+                <button type="submit" id="six" name="btnName" value="6">6</button>
+                <button type="submit" id="mul" name="btnName" value="mul">*</button>
+                <button type="submit" id="one" name="btnName" value="1">1</button>
+                <button type="submit" id="two" name="btnName" value="2">2</button>
+                <button type="submit" id="three" name="btnName" value="3">3</button>
+                <button type="submit" id="divide" name="btnName" value="div">/</button>
+                <button type="submit" id="double0" name="btnName" value="00">00</button>
+                <button type="submit" id="zero" name="btnName" value="0">0</button>
+                <button type="submit" id="decimal" name="btnName" value=".">.</button>
+                <button type="submit" id="equal" name="btnName" value="equal">=</button>
+            </div>
+        </div>
     }
 </div>
