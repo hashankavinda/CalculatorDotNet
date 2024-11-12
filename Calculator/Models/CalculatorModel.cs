@@ -5,6 +5,6 @@
         public double NumberOne { get; set; }
         public double NumberTwo { get; set; }
         public double Operator { get; set; }
-        public string Placeholder { get; set; } = string.Empty;
+        public string Placeholder { get; set; } = "0";
     }
 }
