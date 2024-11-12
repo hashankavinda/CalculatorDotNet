@@ -2,34 +2,191 @@
 @{
     ViewData["Title"] = "Calculator App";
 }
-
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#one").click(function () {
+                $("#inputtext").text(function (i, origVal) {
+                    return origVal == "0" ? "1" : origVal + "1";
+                });
+            });
+            $("#two").click(function () {
+                $("#inputtext").text(function (i, origVal) {
+                    return origVal == "0" ? "2" : origVal + "2";
+                });
+            });
+            $("#three").click(function () {
+                $("#inputtext").text(function (i, origVal) {
+                    return origVal == "0" ? "3" : origVal + "3";
+                });
+            });
+            $("#four").click(function () {
+                $("#inputtext").text(function (i, origVal) {
+                    return origVal == "0" ? "4" : origVal + "4";
+                });
+            });
+            $("#five").click(function () {
+                $("#inputtext").text(function (i, origVal) {
+                    return origVal == "0" ? "5" : origVal + "5";
+                });
+            });
+            $("#six").click(function () {
+                $("#inputtext").text(function (i, origVal) {
+                    return origVal == "0" ? "6" : origVal + "6";
+                });
+            });
+            $("#seven").click(function () {
+                $("#inputtext").text(function (i, origVal) {
+                    return origVal == "0" ? "7" : origVal + "7";
+                });
+            });
+            $("#eight").click(function () {
+                $("#inputtext").text(function (i, origVal) {
+                    return origVal == "0" ? "8" : origVal + "8";
+                });
+            });
+            $("#nine").click(function () {
+                $("#inputtext").text(function (i, origVal) {
+                    return origVal == "0" ? "9" : origVal + "9";
+                });
+            });
+            $("#zero").click(function () {
+                $("#inputtext").text(function (i, origVal) {
+                    return origVal == "0" ? origVal : origVal + "0";
+                });
+            });
+            $("#double0").click(function () {
+                $("#inputtext").text(function (i, origVal) {
+                    return origVal == "0" ? origVal : origVal + "00";
+                });
+            });
+            $("#decimal").click(function () {
+                $("#inputtext").text(function (i, origVal) {
+                    const operator = origVal[origVal.length - 1];
+                    switch (operator) {
+                        case ("+"):
+                        case ("-"):
+                        case ("*"):
+                        case ("/"):
+                        case ("."):
+                            return origVal;
+                        default:
+                            return origVal + ".";
+                    }
+                });
+            });
+            $("#add").click(function () {
+                $("#inputtext").text(function (i, origVal) {
+                    const operator = origVal[origVal.length - 1];
+                    switch (operator) {
+                        case ("+"):
+                        case ("-"):
+                        case ("*"):
+                        case ("/"):
+                            return origVal;
+                        default:
+                            return origVal == "0" ? origVal : origVal + "+";
+                    }
+                });
+            });
+            $("#sub").click(function () {
+                $("#inputtext").text(function (i, origVal) {
+                    const operator = origVal[origVal.length - 1];
+                    switch (operator) {
+                        case ("+"):
+                        case ("-"):
+                        case ("*"):
+                        case ("/"):
+                            return origVal;
+                        default:
+                            return origVal == "0" ? origVal : origVal + "-";
+                    }
+                });
+            });
+            $("#mul").click(function () {
+                $("#inputtext").text(function (i, origVal) {
+                    const operator = origVal[origVal.length - 1];
+                    switch (operator) {
+                        case ("+"):
+                        case ("-"):
+                        case ("*"):
+                        case ("/"):
+                            return origVal;
+                        default:
+                            return origVal == "0" ? origVal : origVal + "*";
+                    }
+                });
+            });
+            $("#divide").click(function () {
+                $("#inputtext").text(function (i, origVal) {
+                    const operator = origVal[origVal.length - 1];
+                    switch (operator) {
+                        case ("+"):
+                        case ("-"):
+                        case ("*"):
+                        case ("/"):
+                            return origVal;
+                        default:
+                            return origVal == "0" ? origVal : origVal + "/";
+                    }
+                });
+            });
+            $("#clear").click(function () {
+                $("#inputtext").text(function (i, origVal) {
+                    return "0";
+                });
+            });
+            $("#delete").click(function () {
+                $("#inputtext").text(function (i, origVal) {
+                    return origVal == "0" ? origVal : origVal.length == 1 ? "0" : origVal.substr(0, origVal.length - 1);
+                });
+            });
+            $("#allClear").click(function () {
+                $("#inputtext").text(function (i, origVal) {
+                    return "0";
+                });
+            });
+            $("#btn2").click(function () {
+                $("#test2").html("<b>Hello world!</b>");
+            });
+            $("#btn3").click(function () {
+                $("#test3").val("Dolly Duck");
+            });
+        });
+    </script>
+</head>
+<body>
 <div class="row">
     @using (Html.BeginForm("Index", "Calculator", FormMethod.Post))
     {
         <div class="grid-container">
             <div class="calculator-grid">
                 <textarea type="text" id="inputtext" placeholder="0" value="@Model.Placeholder">@Model.Placeholder</textarea>
-                <button type="submit" id="clear" name="btnName" value="clear">C</button>
-                <button type="submit" id="delete" name="btnName" value="delete">DEL</button>
-                <button type="submit" id="allClear" name="btnName" value="allClear">AC</button>
-                <button type="submit" id="add" name="btnName" value="add">+</button>
-                <button type="submit" id="seven" name="btnName" value="7">7</button>
-                <button type="submit" id="eight" name="btnName" value="8">8</button>
-                <button type="submit" id="nine" name="btnName" value="9">9</button>
-                <button type="submit" id="sub" name="btnName" value="sub">-</button>
-                <button type="submit" id="four" name="btnName" value="4">4</button>
-                <button type="submit" id="five" name="btnName" value="5">5</button>
-                <button type="submit" id="six" name="btnName" value="6">6</button>
-                <button type="submit" id="mul" name="btnName" value="mul">*</button>
-                <button type="submit" id="one" name="btnName" value="1">1</button>
-                <button type="submit" id="two" name="btnName" value="2">2</button>
-                <button type="submit" id="three" name="btnName" value="3">3</button>
-                <button type="submit" id="divide" name="btnName" value="div">/</button>
-                <button type="submit" id="double0" name="btnName" value="00">00</button>
-                <button type="submit" id="zero" name="btnName" value="0">0</button>
-                <button type="submit" id="decimal" name="btnName" value=".">.</button>
+                <button type="button" id="clear" name="btnName" value="clear">C</button>
+                <button type="button" id="delete" name="btnName" value="delete">DEL</button>
+                <button type="button" id="allClear" name="btnName" value="allClear">AC</button>
+                <button type="button" id="add" name="btnName" value="add">+</button>
+                <button type="button" id="seven" name="btnName" value="7">7</button>
+                <button type="button" id="eight" name="btnName" value="8">8</button>
+                <button type="button" id="nine" name="btnName" value="9">9</button>
+                <button type="button" id="sub" name="btnName" value="sub">-</button>
+                <button type="button" id="four" name="btnName" value="4">4</button>
+                <button type="button" id="five" name="btnName" value="5">5</button>
+                <button type="button" id="six" name="btnName" value="6">6</button>
+                <button type="button" id="mul" name="btnName" value="mul">*</button>
+                <button type="button" id="one" name="btnName" value="1">1</button>
+                <button type="button" id="two" name="btnName" value="2">2</button>
+                <button type="button" id="three" name="btnName" value="3">3</button>
+                <button type="button" id="divide" name="btnName" value="div">/</button>
+                <button type="button" id="double0" name="btnName" value="00">00</button>
+                <button type="button" id="zero" name="btnName" value="0">0</button>
+                <button type="button" id="decimal" name="btnName" value=".">.</button>
                 <button type="submit" id="equal" name="btnName" value="equal">=</button>
             </div>
         </div>
     }
 </div>
+</body>
+</html>
