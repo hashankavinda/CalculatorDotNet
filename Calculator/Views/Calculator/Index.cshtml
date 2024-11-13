@@ -148,12 +148,6 @@
                     return "0";
                 });
             });
-            $("#btn2").click(function () {
-                $("#test2").html("<b>Hello world!</b>");
-            });
-            $("#btn3").click(function () {
-                $("#test3").val("Dolly Duck");
-            });
         });
     </script>
 </head>
@@ -163,7 +157,7 @@
     {
         <div class="grid-container">
             <div class="calculator-grid">
-                <textarea type="text" id="inputtext" placeholder="0" value="@Model.Placeholder">@Model.Placeholder</textarea>
+                <textarea type="text" id="inputtext" name="Placeholder" placeholder="0" value="@Model.Placeholder">@Model.Placeholder</textarea>
                 <button type="button" id="clear" name="btnName" value="clear">C</button>
                 <button type="button" id="delete" name="btnName" value="delete">DEL</button>
                 <button type="button" id="allClear" name="btnName" value="allClear">AC</button>
@@ -183,7 +177,7 @@
                 <button type="button" id="double0" name="btnName" value="00">00</button>
                 <button type="button" id="zero" name="btnName" value="0">0</button>
                 <button type="button" id="decimal" name="btnName" value=".">.</button>
-                <button type="submit" id="equal" name="btnName" value="equal">=</button>
+                <button type="submit" id="equal" name="btnName" value="@Model.Placeholder">=</button>
             </div>
         </div>
     }
